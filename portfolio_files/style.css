@@ -1,0 +1,521 @@
+/* ----------------------------- Universal/Skeleton ------------------------------ */
+
+*{
+    margin: 0px;
+}
+
+body{
+  background-color: #eae7e7;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas: 
+    "nav"
+    "main"
+    "intro"
+    "portfolio"
+    "skills"
+    "education"
+    "footer";
+}
+
+.sub-headings{
+  margin-top:20px;
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #b7eaf5;
+}
+
+p, h4{
+  font-family: 'Roboto', sans-serif;
+}
+
+h4{
+  font-size: 1.14rem;
+}
+
+p{
+  font-size: 1.1rem;
+}
+
+
+/*This covers the area intro to skills*/
+#intro, #portfolio, #skills, #education{
+  text-align: center;
+  background-color: #05051e;
+}
+
+.projects, .items, .institutes{
+  background-color: #e1cbe8;
+  border: 2.2px solid #5a7591;
+  color: #062159;
+  font-size: 16.5px;
+}
+
+.items:hover{
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.projects, .institutes{
+  border:3px solid #786312;
+}
+
+.projects:hover, .institutes:hover{
+  transform: scale(1.008); 
+}
+
+/* --------------------------------- Navigation -------------------------------------- */
+
+nav {
+  background: #0e3552;
+  width: 100%;
+  height:35px;
+  grid-area: nav;
+  font-size: 1.2rem;
+  z-index: 10;
+} 
+
+nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0.6% 0.6%;
+}
+
+a{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #cbe4d7;
+}
+
+a:hover{
+  color: #84eba9;
+}
+
+a:active {
+  color: #5f7fde;
+}
+
+
+/* -------------------------------- Banner (Main) ----------------------------------- */
+
+main {
+  display:flex;
+  grid-area: main;
+  height:100%;
+  padding-top: 13%;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #0e3552, #0c1d36, #070720, #06051e);
+  padding-bottom: 5%;
+}
+
+.mobile-first{
+  display: none;
+}
+
+h1, .job-title{
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+ h1 {
+  font-size: 3rem;
+  color: #cdc6f2;
+}
+
+.job-title{
+  font-size: 1.7rem;
+  color: #b794a8;
+}
+
+.name{
+  font-size: 3.2rem;
+  color: #93bebc;
+}
+
+.title{
+  font-size: 1.9rem;
+  color: #bc74cd;
+}
+
+span.-seperator {
+    color: #8394b3;
+}
+
+span.aspiring-role {
+    color: #adade2;
+}
+
+p.software-dev{
+    display: none;
+    color: #daa7db;
+    padding-top: 75px;
+    font-size: 21px;
+    letter-spacing: 7px;
+    padding: 5px;
+    background-color: #163f881a;
+}
+
+.btn{
+  display: flex;
+  gap: 10%;
+  padding-top: 5%;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btn-style{
+  color: #9ca3a7;
+  padding: 12px 36px;
+  margin: 10px 0;
+  border: 2px solid #707db2c9;
+  border-radius:40px;
+}
+
+.btn-style:hover{
+  background-color: #aaafd6;
+  color: #100315;
+  border: 1.5px solid #565a99;
+}
+
+.fa-2x{
+  border:2px solid #6c6c6c;
+  margin-top:170px;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.fa-2x:hover{
+  color:blue;
+}
+
+.fa-angle-down:before{
+  color: #afb0d6;
+}
+
+.jump {
+  animation: jump 1s infinite alternate;
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* -------------------------------- Introduction --------------------------------- */
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px 70px 100px;
+  grid-area: intro;
+  letter-spacing: 2.5px;
+  font-size: 1.1rem;
+  border-top: 5px solid #43304c;
+  gap: 20px;
+
+} 
+
+.profile_img{
+  border: 1.5px solid #676891;
+}
+
+.profile{
+  border: 1px solid #8295b4;
+  padding: 10px 15px;
+  color: #c0b4d4;
+}
+
+.profile-mobileFirst{
+  display: none;
+}
+
+/* --------------------------------- Portfolio --------------------------------- */
+
+#portfolio {
+  grid-area: portfolio;
+  padding: 20px 30px 60px;
+
+} 
+
+.portfolio-card{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+  
+}
+
+.projects{
+    border:3px solid #786312;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 8px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px #0003;
+    cursor: default;
+    margin-bottom: 10px;
+
+}
+
+.project-title{
+  padding-bottom: 7px;
+  padding-right: 7px;
+  color: #821414f7;
+  font-size: 17.8px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.project-title:hover {
+    color: #040404;
+    text-decoration: underline;
+}
+
+.project-tech-used{
+  color: grey;
+  padding-bottom: 25px;
+  text-align: initial;
+  margin-top: 7px;
+}
+
+.project-img{
+  width:270px;
+  margin-right: 12px;
+  border:1.3px solid #881616;
+}
+
+.project-info-1200w, .project-info-730w{
+  display:none;
+}
+
+
+
+/* ----------------------------------- Skills ----------------------------------- */
+
+#skills {
+  grid-area: skills;
+  padding: 40px 140px 30px;
+} 
+
+.skillset-1{
+  padding-bottom: 45px;
+}
+
+.skill-card {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.items{
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 3px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px #0003;
+    cursor: default;
+}
+
+
+/* --------------------------------- Education ----------------------------------- */
+
+#education {
+  grid-area: education;
+  padding: 60px 30px 50px;
+
+} 
+
+.education-card{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.institutes{
+    width: 80%;
+    padding: 25px 20px;
+    border-radius: 2px;
+    margin: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px #0003;
+    cursor: default;
+}
+
+.college-results{
+  color: slategrey;
+  margin-top:5px;
+}
+
+/* ----------------------------------- Footer ------------------------------------ */
+
+footer {
+  grid-area: footer;
+  display: flex;
+  height:60px;
+  background-color: #04112d;
+  color: #eaf3e8;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid #639bae;
+}
+
+
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------------- Media Query ---------------------------------- */
+/* -------------------------------------------------------------------------------- */
+
+@media (max-width: 1200px){
+
+  .project-img{
+    width:250px;
+  }
+
+  .project-info-mw{
+    display: none;
+  }
+
+  .project-info-1200w{
+    display: initial;
+  }
+
+}
+
+@media (max-width: 1107px){
+
+  .projects{
+    padding: 15px;
+  }
+
+  .project-img{
+    display:none;
+  }
+
+  .project-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+  }
+
+  .project-tech-used {
+    text-align: center;
+    margin-top: 7px;
+  }
+
+}
+
+@media (max-width: 1000px){/*.scroll-down-container {
+    display: none;
+  }*/
+
+  .Profile-mw{
+    display: none;
+  }
+
+  .profile-mobileFirst{
+    display: initial;
+  }
+}
+
+@media (max-width: 880px){
+
+  #skills{
+    padding: 40px 80px 30px;
+  }
+
+}
+
+@media (max-width: 930px){
+
+            /* ----- Banner/Main ----- */
+
+  .mobile-first{
+    display: initial;
+  }
+
+  .h1-fullScreen, .job-fullScreen{
+    display: none;
+  }
+
+  .name{
+    font-size: 3.5rem;
+  }
+
+  p.software-dev{
+    margin-top:30px;
+    display: inherit;
+  }
+
+  .btn{
+    padding-top: 10%;
+  }
+
+            /* ----- Banner/Main ----- */
+
+  .project-info-1200w, .project-info-quiz{
+    display: none;
+  }
+
+  .project-title{
+    text-align: center;
+  }
+
+  .project-tech-used{
+    padding-bottom: 0px;
+  }
+
+
+  .project-info-730w{
+    display: initial;
+  }
+
+  li{
+    margin-left:13px;
+    padding: 5px 0px 10px;
+    font-size: 20px;
+  }
+
+
+} /* Media Query Ends */
+
+@media (max-width: 690px){
+
+  #intro{
+    padding: 50px 20px 70px 20px;
+  }
+
+  #portfolio{
+    padding: 20px 0px 60px;
+  }
+
+  #skills{
+    padding: 40px 20px 30px;
+  }
+
+  #education{
+    padding: 60px 15px 50px
+  }
+}
+

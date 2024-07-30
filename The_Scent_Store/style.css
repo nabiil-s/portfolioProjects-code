@@ -1,0 +1,404 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.9fr 0.9fr 11.7fr 1fr;
+  grid-template-areas: 
+    "header"
+    "aside"
+    "main"
+    "footer";
+  height:100vh;
+}
+
+p, h3{
+  letter-spacing: 0.8px;
+}
+
+p{
+  font-size: 17px;
+}
+
+/* ----------------------- Header, nav, logo ---------------------- */
+
+nav, footer{
+  padding: 12px 0px;
+}
+
+
+header{
+  display: flex;
+  grid-area: header;
+
+}
+
+#logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #201d1d;
+  width:100px;
+}
+
+nav{
+
+  background: #cac4c4; 
+  width:100%; 
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding-right: 10px;
+}
+
+nav.special-nav ul {
+  padding-right: 100px;
+}
+
+.home-nav{
+  text-transform: uppercase; 
+}
+
+.home-width{
+  margin-right: 75px;
+
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 18.5px;
+  letter-spacing: 2px;
+}
+
+p#logo a{
+  font-size: initial;
+  letter-spacing: 0.5px;
+  color: whitesmoke;
+}
+
+a:active {
+  color: #5f7fde;
+}
+
+h3{
+  color: #201d1d;
+}
+
+aside{
+  grid-area: aside;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height:45px;
+  border-bottom: 1.5px solid #01466f;
+  background: #323a3e;  
+
+}
+
+aside a{
+  color: whitesmoke;
+  font-size: 19px;
+}
+
+aside a:active{
+  color: #abe7ff;
+}
+
+a:hover{
+  color: #2b5a88;
+}
+
+.cart:hover{
+  color: #c6cbff;
+}
+
+/*  ------------------------------- Main Div --------------------------------  */
+
+main{
+  grid-area: main;
+  background: #cdd0d7;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  ------------------------------- Search Bar --------------------------------  */
+
+.search{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    margin-top: 15px;
+}
+
+.searchInput {
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 250px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.searchBtn, .resetBtn {
+    padding: 8px 20px;
+    background-color: #5f7fde;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchBtn:hover, .resetBtn:hover{
+    background-color:#445eaa;
+}
+
+
+/*Intro*/
+.greetingMobile{
+  display: none;
+}
+
+
+/* ------------------------------- Product Info -------------------------------- */
+
+.intro{
+  margin:10px;
+}
+
+.image-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.product {
+    background: #d9d6e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: 1.2px solid black;
+    padding: 0px 5px;
+    padding-bottom: 5px;
+    padding-top: 2px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-4px); /* Move the card up by 5 pixels on hover */
+}
+
+
+
+.product img {
+    width: 260px;
+    height: 230px;
+    
+}
+
+.perfumeTitle, .perfumeSum, .stock, .out-of-stock {
+  width:250px;
+  text-align: center;
+  padding: 7.2px 5px;
+}
+
+.perfumeTitle{
+    background: #201d1d;
+    color: whitesmoke; 
+    font-size: 1.2em;
+    margin-top: 2px;
+}
+
+.perfumeSum, .stock, .out-of-stock{
+  background: whitesmoke;
+  color: black;
+}
+
+.stock {
+  color: #585858;
+}
+
+.out-of-stock{
+  color: #d00000;
+}
+
+/* Button */
+
+.buyNow {
+    width: 260px; /* Adjust width as needed */
+    background-color: #5f7fde; /* Custom button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product button:hover {
+  background-color: #445eaa; /* Darker color on hover */
+}
+
+/*  ______________________________ CART SECTION ____________________________  */
+
+/* -------- Cart table -------- */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+table, th, td {
+  border: 1px solid #5a5a67;
+  padding: 8px;
+}
+th {
+  background-color: #aeb6c4;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* -------- Empty Cart ------- */
+
+.cartHeader {
+  color: black;
+  padding: 30px;
+}
+
+/* ----- Link to homepage ---- */
+
+.emptyBasket-full{
+  border-top: 1px solid #032c5a;
+  border-bottom: 1px solid #032c5a;
+  padding: 30px 0px;
+  width: 70%;
+  text-align: center;
+}
+
+.emptyBasket-mobile{
+  display: none;
+}
+
+/* --------- Design ---------- */
+
+.basketLink{
+  text-decoration: underline;
+  font-size: initial;
+  letter-spacing: 0.8px;
+  font-size: 17px;
+}
+
+.basketLink:hover{
+  text-decoration: initial;
+ 
+}
+
+
+/*  ------------------------------- Footer --------------------------------  */
+
+footer{
+  grid-area: footer;
+  background: #212629;  
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.footer-link {
+    color: #96c3ff;
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+a.footer-link:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* ------------------------------- Media Query: General -------------------------------- */
+
+@media (max-width: 550px){
+
+/* Intro */
+  .greetingFull{
+    display: none;
+  }
+
+  .greetingMobile{
+    display: initial;
+  }
+
+/*Product Card*/
+  .product {
+    margin:10px;
+    transition: none;
+  }
+
+  .product:hover {
+    transform: none; /* Move the card up by 5 pixels on hover */
+}
+
+
+/* ------------------------------- Media Query: Search -------------------------------- */
+
+  .search {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  .searchInput {
+    width: 202.5px;
+  }
+
+  .searchBtn, .resetBtn {
+      width: 235px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+/* ------------------------------- Media Query: Cart -------------------------------- */
+}
+
+@media (max-width: 611px){
+
+  .emptyBasket-full{
+    display: none;
+  }
+
+  .emptyBasket-mobile{
+    display: initial;
+    border-top: 1px solid #032c5a;
+    border-bottom: 1px solid #032c5a;
+    padding: 30px 0px;
+    width: 70%;
+    text-align: center;
+  }
+}
+
